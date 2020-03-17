@@ -7,30 +7,29 @@
 
 #define MAX_IDENT		10		//length of identifier for node	
 #define MAX_ITEMS		256		//max number of rows in the input data 
-#define MAX_COSTS		256 	//max costs for one link
+#define MAX_COSTS		256 		//max costs for one link
 #define MAX_NODE_ID		256		//max costs for one node
 #define MAX_LINE		256		//max chars in one line
-#define NODE_ID_INIT	-1		//init of the node id
+#define NODE_ID_INIT	-1			//init of the node id
 
 //structure for link
 typedef struct{
-	int costs;					//costs for link between two nodes
-								//if 0 -> no link exists
+	int costs;					
+								
 }link;
 
-//Datastructure for one node in the matrix of all nodes
+//Datastructure for one node 
 typedef struct{
-	char name[MAX_IDENT+1];		//name of the node
-	int nodeID;					//node id >0
-	link *plinks;				//list of potential reachable nodes
+	char name[MAX_IDENT+1];				
+	int nodeID;					
+	link *plinks;					
 	
-	int nextHop;				//calculated link to the next node in direction of root
-    int rootID;					//assumed root
-    int sumCosts;				//total costs to root
-
-	int msgCnt;					//counts how many times the node was used
+	int nextHop;					
+    	int rootID;					
+    	int sumCosts;					
+	int msgCnt;					
 	#ifdef DEBUG
-    int changerootCnt;          //counts how many times the root was changed
+    int changerootCnt;         			
 	#endif
 } node;
 
