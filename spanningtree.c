@@ -281,7 +281,7 @@ void sptree(int index, int nodeCnt)
                 pnode[index].nextHop = pnode[i].nodeID;
                 pnode[index].sumCosts = getNeighbourCoststoRoot(i) + pnode[index].plinks[i].costs;
             }
-            else if (pnode[index].rootID == getNeighbourRoot(i)) //is there a way with better costs?
+            else if (pnode[index].rootID == getNeighbourRoot(i)) 
             {
                 if (pnode[index].sumCosts > getNeighbourCoststoRoot(i) + pnode[index].plinks[i].costs)
                 {

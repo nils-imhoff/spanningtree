@@ -28,9 +28,6 @@ typedef struct{
     	int rootID;					
     	int sumCosts;					
 	int msgCnt;					
-	#ifdef DEBUG
-    int changerootCnt;         			
-	#endif
 } node;
 
 typedef enum linetype { typeNode, typeCommand_blank, typeLink, typeGraph_begin, typeGraph_end, typeUndefined } linetype;
@@ -60,7 +57,6 @@ void getName(char *name, int index);
 int fillList(int *list, int id, int nodeCnt);
 
 //output
-void printTable(int nodeCnt);
 void printTreeResult(int nodeCnt);
 
 int isTreeFinish(int nodeCnt);
